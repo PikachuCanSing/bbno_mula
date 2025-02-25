@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.game-canvas {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 800px;
+  gap: 20px; /* Add space between character and selector */
+}
+
+.character-area {
+  flex: 1;  /* Take up available space */
+  min-width: 60%;  /* Ensure minimum width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border-radius: 8px;
+  position: relative; /* Add positioning context */
+}
+
+.clothing-options {
+  width: 35%;
+  min-width: 300px; /* Ensure minimum width */
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+/* Ensure the character container stays within its area */
+.character {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Style for the character object/image */
+.character object,
+.character img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.character img {
+  fill: currentColor;
+  color: inherit;
+}
+
+.character-svg {
+  /* Preserve SVG colors and properties */
+  color-interpolation: auto;
+  color-rendering: auto;
+  fill: inherit;
+  stroke: inherit;
+}
+
+/* Ensure parent containers don't interfere with SVG rendering */
+.character, 
+.character > div {
+  isolation: isolate;
+}
